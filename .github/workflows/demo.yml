@@ -24,7 +24,10 @@ jobs:
       - name: Test code
         run: npm run test
       - name: printing secret
-        run: echo ${{ secrets.TEST_SECRET }}
+        run: |
+         echo ${{ secrets.TEST_SECRET }}
+         echo "$TEST_SECRET"
+      
   build:
     needs: test
     runs-on: ubuntu-latest
